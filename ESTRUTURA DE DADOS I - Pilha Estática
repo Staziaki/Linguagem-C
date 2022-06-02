@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define tamanho 5
+
+struct tipo_pilha{
+	
+	int dado[tamanho];
+	int ini;
+	int topo;
+	
+}; 
+
+struct tipo_pilha pilha;
+
+void empilha(int elemento){
+	if(pilha.topo == tamanho)
+	{
+		printf("Pilha cheia. /n");
+		system("pause");
+	}
+	else
+	{
+		pilha.dado[pilha.topo] = elemento;
+		pilha.topo++;
+	}
+}
+
+int desempilha(){
+    int elemento;
+    if(pilha.topo == pilha.ini)
+    {
+    	printf("Pilha vazia. \n");
+    	system("pause");
+	}
+	else{
+		pilha.topo--;
+		elemento = pilha.dado[pilha.topo];
+		return elemento;
+	}
+}
+
+void pilha_mostrar() {
+    int i;
+    printf("Pilha: [ ");
+    for (i = 0 ; i < tamanho; i++)
+	{
+        printf("%d ", pilha.dado[i]);
+    }
+    printf("]\n\n");
+}
+
+int main(int argc, char *argv[]) {
+	
+	printf("Empilhando o prato (1) Vermelho. \n");
+	empilha(1);
+	printf("Empilhando o prato (2) Verde. \n");
+	empilha(2);
+	printf("Empilhando o prato (3) Azul. \n");
+	empilha(3);
+	printf("Empilhando o prato (4) Branco. \n");
+	empilha(4);
+	printf("Empilhando o prato (5) Laranja. \n\n");
+	empilha(5);
+
+    pilha_mostrar();
+	
+	printf("Desempilhou: %d \n", desempilha());
+	printf("Desempilhou: %d \n", desempilha());
+	printf("Desempilhou: %d \n", desempilha());
+	printf("Desempilhou: %d \n", desempilha());
+	printf("Desempilhou: %d \n\n", desempilha());
+	
+	printf("Empilhando o prato (5) Laranja. \n");
+	empilha(5);
+	printf("Empilhando o prato (4) Branco. \n");
+	empilha(4);
+	printf("Empilhando o prato (3) Azul. \n");
+	empilha(3);
+	printf("Empilhando o prato (2) Verde. \n");
+	empilha(2);
+	printf("Empilhando o prato (1) Vermelho. \n\n");
+	empilha(1);
+	
+	pilha_mostrar();
+	
+	return 0;
+}
